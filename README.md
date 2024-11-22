@@ -281,3 +281,90 @@ number = int(input("Input a number: "))
 
 for i in range(1, 11):
     print(f"{number} x {i} = {number * i}")
+# Calculating Average of Numbers Using Functions
+def calculate_average(numbers):
+    """Calculate and return the average of a list of numbers."""
+    return sum(numbers) / len(numbers) if numbers else 0
+
+numbers = [10, 20, 30, 40]
+print("Average:", calculate_average(numbers))
+
+# Finding the Longest Word in a List
+def find_longest_word(words):
+    """Return the longest word in a list of words."""
+    return max(words, key=len) if words else ""
+
+words = ["apple", "banana", "cherry", "blueberry"]
+print("Longest word:", find_longest_word(words))
+
+# Checking if a Number is Prime
+def is_prime(number):
+    """Check if a number is prime."""
+    if number < 2:
+        return False
+    for i in range(2, int(number ** 0.5) + 1):
+        if number % i == 0:
+            return False
+    return True
+
+number = 29
+print(f"Is {number} prime? {is_prime(number)}")
+
+# Converting Temperature Units
+def convert_temperature(temp, to_unit):
+    """Convert temperature between Celsius and Fahrenheit."""
+    if to_unit.lower() == "fahrenheit":
+        return temp * 9 / 5 + 32
+    elif to_unit.lower() == "celsius":
+        return (temp - 32) * 5 / 9
+    else:
+        raise ValueError("Invalid unit: use 'Celsius' or 'Fahrenheit'.")
+
+print("To Fahrenheit:", convert_temperature(25, "fahrenheit"))
+print("To Celsius:", convert_temperature(77, "celsius"))
+
+# Generating a List of Squares Using List Comprehension and Functions
+def generate_squares(n):
+    """Return a list of squares from 1 to n."""
+    return [x ** 2 for x in range(1, n + 1)]
+
+print("Squares:", generate_squares(5))
+
+# Converting a List of Strings to Uppercase
+def convert_to_uppercase(strings):
+    """Convert all strings in a list to uppercase."""
+    return [string.upper() for string in strings]
+
+strings = ["hello", "world", "python"]
+print("Uppercase Strings:", convert_to_uppercase(strings))
+
+# Calculating the Total Price Including Tax
+
+def calculate_total_price(prices, tax_rate):
+    """Calculate total price including tax."""
+    return sum(prices) * (1 + tax_rate)
+
+prices = [100, 200, 300]
+tax_rate = 0.15  
+print("Total Price:", calculate_total_price(prices, tax_rate))
+
+# Finding the Minimum and Maximum Values in a List
+def find_min_max(values):
+    """Return the minimum and maximum values in a list."""
+    return min(values), max(values)
+
+values = [3, 1, 4, 1, 5, 9]
+min_val, max_val = find_min_max(values)
+print(f"Min: {min_val}, Max: {max_val}")
+
+# Checking if a String is a Valid Email Address
+
+# Counting the Frequency of Each Character in a String
+from collections import Counter
+
+def count_character_frequency(string):
+    """Count the frequency of each character in a string."""
+    return Counter(string)
+
+string = "vesca barca"
+print("Character Frequency:", count_character_frequency(string))
